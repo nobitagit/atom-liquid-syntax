@@ -1,0 +1,11 @@
+{
+  "name": "atom-liquid-syntax",
+  "theme": "syntax",
+  "version": "0.0.1",
+  "description": "Atom liquid syntax theme",
+  "repository": "https://github.com/atom/liquid-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  }
+}
