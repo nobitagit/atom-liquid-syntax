@@ -1,8 +1,5 @@
 @import "syntax-variables";
 
-atom-text-editor.editor{
-   font-family: 'Menlo','Monaco', 'Source Code Pro', 'Lucida Grande', 'Segoe UI', sans-serif;
-}
 atom-text-editor, :host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
@@ -19,6 +16,15 @@ atom-text-editor, :host {
     color: @syntax-invisible-character-color;
   }
 
+  .line{
+    //transition: all 0.2s;
+  }
+  .cursor-line {
+    background-color: @syntax-gutter-background-color-selected;
+    color: @syntax-gutter-text-color-selected;
+    //transition: all 0.5s;
+  }
+
   .gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
@@ -29,10 +35,10 @@ atom-text-editor, :host {
       &:hover{
         transform: scale(0.7);
       }
-      &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
-      }
+/*       &.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+} */
 
       &.cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
@@ -110,7 +116,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .constant {
-  color: @orange;
+  color: @purple;
 
   &.character.escape {
     color: @cyan;
@@ -142,12 +148,42 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .invalid.illegal {
-  background-color: @green;
   color: @syntax-background-color;
+  background-color: @cyan;
 }
 
+.html{
+  &.entity.tag{
+    color: @blue;
+  }
+  .entity.other.attribute-name {
+    color: @purple;
+  }
+}
+
+.css, .less, .scss{
+  &.class{
+    color: @pink;
+  }
+  &.tag{
+    color: @light-orange;
+  }
+}
+.less{
+  &.variable{
+    color: @blue;
+  }
+}
+.json{
+  &.string{
+    color: @purple;
+  }
+  &.value .string{
+    color: @seagreen;
+  }
+}
 .string {
-  color: @green;
+  color: @aqua;
 
 
   &.regexp {
@@ -226,12 +262,12 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.name.tag {
-    color: @green;
+    //color: @green;
     text-decoration: underline;
   }
 
   &.other.attribute-name {
-    color: @orange;
+    color: @seagreen;
 
     &.id {
       color: @blue;
